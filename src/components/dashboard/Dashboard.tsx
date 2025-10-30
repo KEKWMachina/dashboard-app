@@ -1,13 +1,24 @@
 import { useEffect, useState } from "react";
 
+import type { UserInterface } from "../../interfaces/UserInterface";
+import { UserStatistics } from "../UserStatistics/UserStatistics";
 import { DashboardCard } from "./DashboardCard/DashboardCard";
 import { usersApi } from "../../api/usersApi";
+import { LineChart } from "../charts/LineChart/LineChart";
+import { getLineChartData } from "../../helpers/getLineChartData";
+import type { ScatterTraceInterface } from "../../interfaces/ScatterTraceInterface";
 
 export const Dashboard = () => {
-  const [users, setUsers] = useState();
+  const [lineChartData, setLineChartData] = useState<ScatterTraceInterface[]>(
+    []
+  );
+  const [users, setUsers] = useState<UserInterface[]>([]);
 
   useEffect(() => {
-    usersApi.get().then((usersData) => setUsers(usersData));
+    usersApi.get().then((users) => {
+      setLineChartData(getLineChartData(users));
+      setUsers(users);
+    });
   }, []);
 
   return (
@@ -20,12 +31,12 @@ export const Dashboard = () => {
         </div>
         <div className="row-start-2 col-start-1 col-span-6 sm:col-span-3 min-h-[200px]">
           <DashboardCard title={"Combined Statistics"}>
-            <div>02</div>
+            <UserStatistics />
           </DashboardCard>
         </div>
         <div className="row-start-3 col-start-1 col-span-6 sm:row-start-2 sm:col-start-4 sm:col-span-3 min-h-[200px]">
           <DashboardCard title={"Users by Age"}>
-            <div>03</div>
+            <LineChart chartData={lineChartData} />
           </DashboardCard>
         </div>
       </div>
