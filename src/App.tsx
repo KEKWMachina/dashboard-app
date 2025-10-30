@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { Dashboard } from "./components/dashboard/Dashboard"
 
 function App() {
   return (
-    <div>1</div>
+    <Dashboard />
   )
 }
 
