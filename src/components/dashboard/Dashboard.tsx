@@ -1,6 +1,15 @@
+import { useEffect, useState } from "react";
+
 import { DashboardCard } from "./DashboardCard/DashboardCard";
+import { usersApi } from "../../api/usersApi";
 
 export const Dashboard = () => {
+  const [users, setUsers] = useState();
+
+  useEffect(() => {
+    usersApi.get().then((usersData) => setUsers(usersData));
+  }, []);
+
   return (
     <div className="h-screen overflow-y-auto">
       <div className="grid grid-cols-6 grid-rows-3 sm:grid-rows-2 gap-4 p-12 min-h-full">
