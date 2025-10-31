@@ -3,16 +3,3 @@
 @theme {
   --drop-shadow-dashboard-widget: 0px 0px 5px #000000;
 }
-
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  background-color: #fff;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
