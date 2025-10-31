@@ -13,7 +13,6 @@ export const UsersDataTable = ({ users }: { users: User[] }) => {
 
   const handleHeaderCellClick = (headerKey: string) => {
     const noDirection = headerKey !== sortBy.key;
-    console.log(noDirection);
 
     if (noDirection) {
       setSortBy({
@@ -73,7 +72,9 @@ export const UsersDataTable = ({ users }: { users: User[] }) => {
                   {sortBy.key === key ? (
                     <SortDirectionArrow direction={sortBy.direction} />
                   ) : (
-                    <span className="invisible group-hover:visible">&#9650;</span>
+                    <span className="invisible group-hover:visible">
+                      &#9650;
+                    </span>
                   )}
                 </span>
               </th>

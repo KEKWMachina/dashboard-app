@@ -1,5 +1,5 @@
-import type { User } from "../interfaces/User.interface";
 import { api } from "./axiosConfig";
+import type { User } from "../interfaces/User.interface";
 
 export const usersApi = {
   getAll: async (): Promise<User[]> => {

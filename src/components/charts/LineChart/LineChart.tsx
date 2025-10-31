@@ -1,4 +1,5 @@
 import Plot from "react-plotly.js";
+import type { Data } from "plotly.js";
 
 import {
   lineChartConfig,
@@ -6,7 +7,6 @@ import {
   lineChartStyles,
 } from "./constants/lineChartConstants";
 import type { ScatterTrace } from "../../../interfaces/ScatterTrace.interface";
-import type { Data } from "plotly.js";
 
 export const LineChart = ({
   chartData,

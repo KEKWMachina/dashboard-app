@@ -1,6 +1,5 @@
 import axios, { AxiosError } from "axios";
 
-
 export const api = axios.create({
   withCredentials: true,
   baseURL: "https://dummyjson.com",
