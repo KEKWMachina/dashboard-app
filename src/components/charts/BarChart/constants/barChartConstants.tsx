@@ -4,7 +4,12 @@ export const barChartLayout: Partial<Plotly.Layout> = {
   showlegend: false,
   dragmode: false,
   hovermode: "closest",
-  margin: { t: 0, l: 0, b: 0, r: 0 },
+  title: {
+    font: {
+      size: 12,
+    },
+  },
+  margin: { t: 20, l: 0, b: 0, r: 0 },
   xaxis: {
     rangebreaks: [{ enabled: false }],
     zeroline: false,

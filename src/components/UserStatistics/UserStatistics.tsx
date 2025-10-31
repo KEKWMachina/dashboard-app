@@ -17,16 +17,16 @@ export const UserStatistics = ({
             Median age:
             <span className="font-bold">{statistics.ageMedian}</span>
           </div>
-          <div className="w-2/4 h-[calc(100%-30px)]">
-            Height
+          <div className="w-2/4 h-[calc(100%-30px)] flex justify-center">
             <BarChart
+              title={"Height Distribution"}
               average={statistics.avgHeight}
               max={statistics.maxHeight}
             />
           </div>
-          <div className="w-2/4 h-[calc(100%-30px)]">
-            Weight
+          <div className="w-2/4 h-[calc(100%-30px)] flex justify-center">
             <BarChart
+              title={"Weight Distribution"}
               average={statistics.avgWeight}
               max={statistics.maxWeight}
             />
