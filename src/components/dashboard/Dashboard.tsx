@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 
-import type { UserInterface } from "../../interfaces/UserInterface";
 import { UserStatistics } from "../UserStatistics/UserStatistics";
 import { DashboardCard } from "./DashboardCard/DashboardCard";
 import { usersApi } from "../../api/usersApi";
@@ -14,13 +13,11 @@ export const Dashboard = () => {
   const [chartData, setChartData] = useState<ScatterTraceInterface[]>([]);
   const [userStatistics, setUserStatistics] =
     useState<UserStatisticsInterface>();
-  const [users, setUsers] = useState<UserInterface[]>([]);
 
   useEffect(() => {
     usersApi.getAll().then((users) => {
       setChartData(getLineChartData(users));
       setUserStatistics(getUserStatistics(users));
-      setUsers(users);
     });
   }, []);
 
