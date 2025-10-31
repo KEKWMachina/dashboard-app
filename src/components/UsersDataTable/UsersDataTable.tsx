@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import { SortDirectionArrow } from "../SortDirectionArrow/SortDirectionArrow";
 import { columns, type ColumnKeys } from "./constants/columns";
@@ -40,7 +40,7 @@ export const UsersDataTable = ({ users }: { users: User[] }) => {
     });
   };
 
-  const getSortedArray = () => {
+  const sortedArray = useMemo(() => {
     if (columns.find(({ key }) => key === sortBy.key)) {
       return [...users].sort((a, b) => {
         const aVal = a[sortBy.key];
@@ -55,8 +55,9 @@ export const UsersDataTable = ({ users }: { users: User[] }) => {
         }
       });
     }
+
     return users;
-  };
+  }, [users, sortBy]);
 
   return (
     <div className="text-start text-stone-800 pl-4 pt-0 mr-4 h-[calc(100%-60px)] w-[calc(100% - 16px)] text-sm overflow-auto">
@@ -84,7 +85,7 @@ export const UsersDataTable = ({ users }: { users: User[] }) => {
           </tr>
         </thead>
         <tbody>
-          {getSortedArray()?.map(
+          {sortedArray.map(
             ({ id, firstName, email, role, birthDate, weight, height }) => (
               <tr key={id} className="border-b pb-1">
                 <td>{id}</td>
