@@ -1,4 +1,4 @@
-import type { BarChartTrace } from "../interfaces/BarTraceInterface";
+import type { BarChartTrace } from "../interfaces/BarTrace.interface";
 
 export const getBarChartData = (
   average: number,

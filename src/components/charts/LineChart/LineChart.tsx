@@ -5,13 +5,13 @@ import {
   lineChartLayout,
   lineChartStyles,
 } from "./constants/lineChartConstants";
-import type { ScatterTraceInterface } from "../../../interfaces/ScatterTraceInterface";
+import type { ScatterTrace } from "../../../interfaces/ScatterTrace.interface";
 import type { Data } from "plotly.js";
 
 export const LineChart = ({
   chartData,
 }: {
-  chartData: ScatterTraceInterface[];
+  chartData: ScatterTrace[];
 }) => {
   return (
     <div className="h-[80%] w-[100%] flex justify-center overflow-clip">

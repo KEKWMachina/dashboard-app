@@ -1,8 +1,8 @@
-import type { UserInterface } from "../interfaces/UserInterface";
+import type { User } from "../interfaces/User.interface";
 import { api } from "./axiosConfig";
 
 export const usersApi = {
-  getAll: async (): Promise<UserInterface[]> => {
+  getAll: async (): Promise<User[]> => {
     const response = await api.request({
       url: "/users",
       method: "GET",

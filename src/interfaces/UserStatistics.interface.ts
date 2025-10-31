@@ -1,4 +1,4 @@
-export interface UserStatisticsInterface {
+export interface UserStatistics {
   total: number;
   ageMedian: number;
   maxWeight: number;

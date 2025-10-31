@@ -1,4 +1,4 @@
-import type { UserStatisticsInterface } from "../../interfaces/UserStatisticsInterface";
+import type { UserStatistics as UserStatisticsInterface } from "../../interfaces/UserStatistics.interface";
 import { BarChart } from "../charts/BarChart/BarChart";
 
 export const UserStatistics = ({

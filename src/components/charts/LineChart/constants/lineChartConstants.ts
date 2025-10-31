@@ -1,4 +1,4 @@
-import type { ScatterTraceInterface } from "../../../../interfaces/ScatterTraceInterface";
+import type { ScatterTrace } from "../../../../interfaces/ScatterTrace.interface";
 
 export const lineChartConfig = { displayModeBar: false, responsive: true };
 
@@ -27,7 +27,7 @@ export const lineChartLayout: Partial<Plotly.Layout> = {
   },
 };
 
-export const LineChartScatterTraceConfig: ScatterTraceInterface = {
+export const LineChartScatterTraceConfig: ScatterTrace = {
   x: [],
   y: [],
   text: [],

@@ -1,4 +1,4 @@
-export interface ScatterTraceInterface {
+export interface ScatterTrace {
   x: number[];
   y: number[];
   text: string[];

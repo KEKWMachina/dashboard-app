@@ -1,5 +1,5 @@
-import type { UserInterface } from "../interfaces/UserInterface";
-import type { UserStatisticsInterface } from "../interfaces/UserStatisticsInterface";
+import type { User } from "../interfaces/User.interface";
+import type { UserStatistics } from "../interfaces/UserStatistics.interface";
 
 const getMedian = (ageArr: number[]): number => {
   const sorted = Array.from(ageArr).sort((a, b) => a - b);
@@ -19,8 +19,8 @@ const getAverage = (numbers: number[]): number => {
 };
 
 export const getUserStatistics = (
-  users: UserInterface[]
-): UserStatisticsInterface => {
+  users: User[]
+): UserStatistics => {
   const ages = users.map(({ age }) => age);
   const heights = users.map(({ height }) => height);
   const weights = users.map(({ weight }) => weight);

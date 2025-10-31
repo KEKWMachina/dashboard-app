@@ -1,17 +1,17 @@
 import { LineChartScatterTraceConfig } from "../components/charts/LineChart/constants/lineChartConstants";
-import type { ScatterTraceInterface } from "../interfaces/ScatterTraceInterface";
-import type { UserInterface } from "../interfaces/UserInterface";
+import type { ScatterTrace } from "../interfaces/ScatterTrace.interface";
+import type { User } from "../interfaces/User.interface";
 
 const getHoverTemplate = (age: number, usersCount: number): string => {
   return `<span>Age:${age}</span><br><span>Users:${usersCount}</span>`;
 };
 
 export const getLineChartData = (
-  users: UserInterface[]
-): ScatterTraceInterface[] => {
+  users: User[]
+): ScatterTrace[] => {
   const baseTrace = structuredClone(LineChartScatterTraceConfig);
   const usersByAge = users.reduce(
-    (acc: { [key: number]: UserInterface[] }, curr) => {
+    (acc: { [key: number]: User[] }, curr) => {
       if (!acc[curr.age]) {
         acc[curr.age] = [];
       }

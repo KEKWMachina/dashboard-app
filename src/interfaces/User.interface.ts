@@ -76,7 +76,7 @@ interface UserHair {
   type: string;
 }
 
-export interface UserInterface extends BaseUser {
+export interface User extends BaseUser {
   address: UserAdress;
   bank: UserBank;
   company: UserCompany;

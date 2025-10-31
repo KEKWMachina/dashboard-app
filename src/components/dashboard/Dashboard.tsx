@@ -5,12 +5,13 @@ import { DashboardCard } from "./DashboardCard/DashboardCard";
 import { usersApi } from "../../api/usersApi";
 import { LineChart } from "../charts/LineChart/LineChart";
 import { getLineChartData } from "../../helpers/getLineChartData";
-import type { ScatterTraceInterface } from "../../interfaces/ScatterTraceInterface";
-import type { UserStatisticsInterface } from "../../interfaces/UserStatisticsInterface";
 import { getUserStatistics } from "../../helpers/getUserStatistics";
 
+import type { ScatterTrace } from "../../interfaces/ScatterTrace.interface";
+import type { UserStatistics as UserStatisticsInterface } from "../../interfaces/UserStatistics.interface";
+
 export const Dashboard = () => {
-  const [chartData, setChartData] = useState<ScatterTraceInterface[]>([]);
+  const [chartData, setChartData] = useState<ScatterTrace[]>([]);
   const [userStatistics, setUserStatistics] =
     useState<UserStatisticsInterface>();
 
