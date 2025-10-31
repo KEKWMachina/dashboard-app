@@ -14,7 +14,7 @@ export const LineChart = ({
   chartData: ScatterTraceInterface[];
 }) => {
   return (
-    <div className="max-h-[80%] max-w-[100%] flex justify-center">
+    <div className="h-[80%] w-[100%] flex justify-center overflow-clip">
       <Plot
         data={chartData as Data[]}
         config={lineChartConfig}
