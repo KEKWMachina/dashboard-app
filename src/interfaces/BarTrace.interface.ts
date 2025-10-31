@@ -1,4 +1,4 @@
-export interface BarChartTrace {
+export interface BarTrace {
   x: string[];
   y: number[];
   type: string;

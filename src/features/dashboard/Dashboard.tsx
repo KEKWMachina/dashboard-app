@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 
-import { UsersDataTable } from "../UsersDataTable/UsersDataTable";
-import { UserStatistics } from "../UserStatistics/UserStatistics";
-import { DashboardCard } from "./DashboardCard/DashboardCard";
 import { usersApi } from "../../api/usersApi";
-import { LineChart } from "../charts/LineChart/LineChart";
+
 import { getLineChartData } from "../../helpers/getLineChartData";
 import { getUserStatistics } from "../../helpers/getUserStatistics";
 
-import type { ScatterTrace } from "../../interfaces/ScatterTrace.interface";
-import type { UserStatistics as UserStatisticsInterface } from "../../interfaces/UserStatistics.interface";
-import type { User } from "../../interfaces/User.interface";
+import { DashboardCard } from "../../components/DashboardCard/DashboardCard";
+import { UsersDataTable } from "../../components/UsersDataTable/UsersDataTable";
+import { UserStatistics } from "../../components/UserStatistics/UserStatistics";
+import { LineChart } from "../../components/charts/LineChart/LineChart";
+import type { ScatterTrace, User } from "../../interfaces";
+import type { UserStatistics as UserStatisticsInterface } from "../../interfaces";
 
 export const Dashboard = () => {
   const [users, setUsers] = useState<User[]>([]);

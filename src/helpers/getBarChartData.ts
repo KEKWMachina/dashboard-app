@@ -1,9 +1,6 @@
-import type { BarChartTrace } from "../interfaces/BarTrace.interface";
+import type { BarTrace } from "../interfaces";
 
-export const getBarChartData = (
-  average: number,
-  max: number
-): BarChartTrace[] => {
+export const getBarChartData = (average: number, max: number): BarTrace[] => {
   return [
     {
       x: ["Max"],

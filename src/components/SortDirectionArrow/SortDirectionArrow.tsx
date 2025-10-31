@@ -1,13 +1,9 @@
-import { sortingDirection } from "../UsersDataTable/constants/sortingDirection";
+import { sortingDirection, type SortingDirection } from "../UsersDataTable/constants/sortingDirection";
 
-export const SortDirectionArrow = ({ direction }: { direction: string }) => {
-  return (
-    <>
-      {direction === sortingDirection.ASC ? (
-        <span>&#9660;</span>
-      ) : (
-        <span>&#9650;</span>
-      )}
-    </>
+export const SortDirectionArrow = ({ direction }: { direction: SortingDirection }) => {
+  return direction === sortingDirection.ASC ? (
+    <span>&#9660;</span>
+  ) : (
+    <span>&#9650;</span>
   );
 };

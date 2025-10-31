@@ -6,13 +6,9 @@ import {
   lineChartLayout,
   lineChartStyles,
 } from "./constants/lineChartConstants";
-import type { ScatterTrace } from "../../../interfaces/ScatterTrace.interface";
+import type { ScatterTrace } from "../../../interfaces";
 
-export const LineChart = ({
-  chartData,
-}: {
-  chartData: ScatterTrace[];
-}) => {
+export const LineChart = ({ chartData }: { chartData: ScatterTrace[] }) => {
   return (
     <div className="h-[80%] w-[100%] flex justify-center overflow-clip">
       <Plot

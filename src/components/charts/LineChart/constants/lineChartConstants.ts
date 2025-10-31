@@ -1,4 +1,4 @@
-import type { ScatterTrace } from "../../../../interfaces/ScatterTrace.interface";
+import type { ScatterTrace } from "../../../../interfaces";
 
 export const lineChartConfig = { displayModeBar: false, responsive: true };
 
@@ -36,6 +36,6 @@ export const LineChartScatterTraceConfig: ScatterTrace = {
   marker: { color: "green" },
   hoverinfo: "text",
   hoverlabel: {
-    bgcolor: '#fff'
-  }
+    bgcolor: "#fff",
+  },
 };

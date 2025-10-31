@@ -1,17 +1,23 @@
 import { useState } from "react";
 
 import { SortDirectionArrow } from "../SortDirectionArrow/SortDirectionArrow";
-import { columns } from "./constants/columns";
-import { sortingDirection } from "./constants/sortingDirection";
-import type { User } from "../../interfaces/User.interface";
+import { columns, type ColumnKeys } from "./constants/columns";
+import {
+  sortingDirection,
+  type SortingDirection,
+} from "./constants/sortingDirection";
+import type { User } from "../../interfaces";
 
 export const UsersDataTable = ({ users }: { users: User[] }) => {
-  const [sortBy, setSortBy] = useState({
+  const [sortBy, setSortBy] = useState<{
+    key: ColumnKeys;
+    direction: SortingDirection;
+  }>({
     key: columns[0].key,
     direction: sortingDirection.ASC,
   });
 
-  const handleHeaderCellClick = (headerKey: string) => {
+  const handleHeaderCellClick = (headerKey: ColumnKeys) => {
     const noDirection = headerKey !== sortBy.key;
 
     if (noDirection) {
@@ -36,7 +42,7 @@ export const UsersDataTable = ({ users }: { users: User[] }) => {
 
   const getSortedArray = () => {
     if (columns.find(({ key }) => key === sortBy.key)) {
-      return [...users].sort((a: any, b: any) => {
+      return [...users].sort((a, b) => {
         const aVal = a[sortBy.key];
         const bVal = b[sortBy.key];
 
@@ -51,10 +57,6 @@ export const UsersDataTable = ({ users }: { users: User[] }) => {
     }
     return users;
   };
-
-  console.log(sortBy);
-
-  console.log(getSortedArray());
 
   return (
     <div className="text-start text-stone-800 pl-4 pt-0 mr-4 h-[calc(100%-60px)] w-[calc(100% - 16px)] text-sm overflow-auto">
